@@ -201,7 +201,7 @@ input[type=range]{width:100%;accent-color:var(--panel-accent)}
 </style>
 </head>
 <body>
-<script>try{if(localStorage.getItem('flores-amarillas-unlocked')==='1')document.documentElement.classList.add('unlocked');}catch(e){}</script>
+<script>/* La contraseña ahora se pide siempre: ya no se comprueba localStorage al cargar. */</script>
 <div id="gate">
   <p class="gate-lock" aria-hidden="true">🔒</p>
   <h2 class="gate-title">Antes de abrir…</h2>
@@ -1257,7 +1257,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (modal.
       err.textContent = '';
       gate.classList.add('hide');
       document.documentElement.classList.add('unlocked');
-      try { localStorage.setItem(GATE_KEY, '1'); } catch (e) {}
     } else {
       err.textContent = 'No es esa… inténtalo de nuevo 🌻';
       form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake');
